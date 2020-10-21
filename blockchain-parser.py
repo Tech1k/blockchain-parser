@@ -84,8 +84,10 @@ for i in fList:
         tmpHex = hashlib.new('sha256', tmpHex).digest()
         tmpHex = hashlib.new('sha256', tmpHex).digest()
         tmpHex = tmpHex[::-1]        
-        tmpHex = tmpHex.hex().upper()
-        resList.append('SHA256 hash of the current block hash = ' + tmpHex)
+        #tmpHex = tmpHex.hex().upper()
+        tmpHex = tmpHex.hex().lower()
+        #resList.append('SHA256 hash of the current block hash = ' + tmpHex)
+        resList.append(tmpHex)
         f.seek(tmpPos3,0)
         tmpHex = read_bytes(f,4)
         #resList.append('Version number = ' + tmpHex)
